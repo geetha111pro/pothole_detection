@@ -4,9 +4,13 @@ import tempfile
 from PIL import Image
 from ultralytics import YOLO
 import numpy as np
+import os
 
-# Load the trained YOLOv8 model
-model = YOLO("best.pt")  # Replace with your model name if different
+model_path = os.path.abspath("best.pt")
+print("Model path:", model_path)
+model = YOLO(model_path)
+
+
 
 st.title("🕳️ Pothole Detection using YOLOv8")
 st.sidebar.title("Input Options")
