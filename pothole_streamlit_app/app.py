@@ -6,9 +6,7 @@ from ultralytics import YOLO
 import numpy as np
 import os
 
-model_path = os.path.abspath("best.pt")
-print("Model path:", model_path)
-model = YOLO(model_path)
+model = YOLO("pothole_streamlit_app/best.pt")
 
 
 
