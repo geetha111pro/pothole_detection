@@ -19,7 +19,7 @@ if input_type == "Image":
     uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
     if uploaded_image:
         image = Image.open(uploaded_image)
-        st.image(image, caption="Uploaded Image", use_column_width=True)
+        st.image(image, caption="Uploaded Image", use_container_width=True)
 
         # Save image temporarily
         with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp:
@@ -28,7 +28,7 @@ if input_type == "Image":
             # Use predict for better accuracy
             results = model.predict(source=temp.name, conf=0.5)
             result_img = results[0].plot()
-            st.image(result_img, caption="Detection Result", use_column_width=True)
+            st.image(result_img, caption="Detection Result", use_container_width=True)
 
 # Video upload and detection
 elif input_type == "Video":
