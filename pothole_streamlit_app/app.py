@@ -5,8 +5,11 @@ from PIL import Image
 from ultralytics import YOLO
 import numpy as np
 import os
+from pathlib import Path
 
-model = YOLO("pothole_streamlit_app/best.pt")
+MODEL_PATH = Path(__file__).resolve().parent / "best.pt"
+model = YOLO(str(MODEL_PATH))
+
 
 
 
